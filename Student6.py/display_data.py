@@ -6,26 +6,26 @@ import json
 import requests
 
 #Extracts specific fields from the data 
-def parse_apod_info(data):
-    parse_info ={
-                "title":data.get("title"),
-                "explanation":data.get("explanation"),
-                "media_type":data.get("media_type"),
-                "url":data.get("url")
-    }
-    return parse_info
+# def parse_apod_info(data):
+#     parse_info ={
+#                 "title":data.get("title"),
+#                 "explanation":data.get("explanation"),
+#                 "media_type":data.get("media_type"),
+#                 "url":data.get("url")
+#     }
+#     return parse_info
 
 #Retrieve the picture of the day data from NASA API
-def fetch_apod_info(api_key):
-    url ="https://api.nasa.gov/planetary/apod"
-    params = {'api_key': api_key}
+# def fetch_apod_info(api_key):
+#     url ="https://api.nasa.gov/planetary/apod"
+#     params = {'api_key': api_key}
 
-    response = requests.get(url, params=params)
-    if response.status_code == 200:
-        return parse_apod_info(response.json())
-    else:
-        print("Error getching data: {response.status_code}")
-        return None
+#     response = requests.get(url, params=params)
+#     if response.status_code == 200:
+#         return parse_apod_info(response.json())
+#     else:
+#         print("Error getching data: {response.status_code}")
+#         return None
     
 
 def display_apod_info(info):
